@@ -6,9 +6,11 @@ function NavHeaderList(props) {
   return (
     <nav>
       <ul className="nav-list">
-        {props.items.map((listItem) => {
+        {props.items.map(({ name, link }, index) => {
           return (
-            <NavHeaderListItem key={listItem}>{listItem}</NavHeaderListItem>
+            <NavHeaderListItem key={index} name={name} link={link}>
+              <a href={link}>{name}</a>
+            </NavHeaderListItem>
           );
         })}
       </ul>
@@ -17,7 +19,12 @@ function NavHeaderList(props) {
 }
 
 NavHeaderList.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.string).isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      link: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
 };
 
 export default NavHeaderList;

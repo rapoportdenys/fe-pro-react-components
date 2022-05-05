@@ -2,14 +2,19 @@ import React from 'react';
 import NavHeaderList from './Nav-header-list';
 
 const Header = () => {
-  const ArrOfNavName = ['Home', 'About us', 'Contact us', 'Help page'];
+  const arrOfNavName = [
+    { name: 'Home', link: '/' },
+    { name: 'About us', link: '/#about' },
+    { name: 'Contact us', link: '/#contact' },
+    { name: 'Help page', link: '/#help' },
+  ];
   return (
     <div className="header">
       <div className="container">
         <a href="" className="logo">
           My logo
         </a>
-        <NavHeaderList items={ArrOfNavName} />
+        <NavHeaderList items={arrOfNavName} />
       </div>
     </div>
   );

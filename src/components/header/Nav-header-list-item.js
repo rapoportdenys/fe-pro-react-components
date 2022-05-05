@@ -1,16 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const NavHeaderListItem = function (props) {
+const NavHeaderListItem = function ({ name, link }) {
   return (
     <li className="nav-list__item">
-      <a href=""> {props.children} </a>
+      <a href={link}> {name} </a>
     </li>
   );
 };
 
 NavHeaderListItem.propTypes = {
-  children: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
 };
 
 export default NavHeaderListItem;
