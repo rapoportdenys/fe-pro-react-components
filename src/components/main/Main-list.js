@@ -22,7 +22,12 @@ const MainList = (props) => {
 };
 
 MainList.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.object).isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      headlineArticles: PropTypes.string.isRequired,
+      bodyArticles: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
 };
 
 export default MainList;
